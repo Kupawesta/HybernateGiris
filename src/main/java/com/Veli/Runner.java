@@ -1,5 +1,6 @@
 package com.Veli;
 
+import com.Veli.repository.MusteriRepository;
 import com.Veli.repository.entity.Musteri;
 import com.Veli.utility.HibernateUtility;
 import org.hibernate.Session;
@@ -7,6 +8,19 @@ import org.hibernate.Transaction;
 
 public class Runner {
     public static void main(String[] args) {
+      /*
+      KAYIT V.1
+      Musteri mst = new Musteri();
+      mst.setAd("Veli");
+      mst.setSoyad("CANLI");
+      mst.setAdres("Ankara");
+      MusteriRepository dbmusteri =new MusteriRepository();
+      dbmusteri.save(mst);
+        */
+        // KAYIT V.2
+        new MusteriRepository().save(new Musteri("Emre","YILMAZ","Ankara"));
+    }
+    public static void SaveHibernate(){
         /**
          * Hibernate ile Veri eklemek
          * 1. Bağlantıyı aç (Oturum açmak-Session)
@@ -24,6 +38,5 @@ public class Runner {
         session.save(mst);
         transaction.commit();
         session.close();
-
     }
 }

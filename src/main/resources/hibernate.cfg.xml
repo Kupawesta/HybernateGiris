@@ -45,6 +45,7 @@ Contributor(s):
         <property name="hibernate.show_sql">true</property>
 
         <mapping class="com.Veli.repository.entity.Musteri"></mapping>
+        <mapping class="com.Veli.repository.entity.Satis"></mapping>
 
 
     </session-factory>
